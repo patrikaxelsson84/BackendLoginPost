@@ -37,7 +37,6 @@ public class UserController {
             response.setStatus(406);
             return null;
         }
-
         return token;
     }
 

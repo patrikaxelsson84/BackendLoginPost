@@ -7,5 +7,5 @@ import lombok.Setter;
 @Setter
 public class Post {
 
-    private String name, description;
+    private String name, description, username;
 }

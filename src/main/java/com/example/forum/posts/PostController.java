@@ -21,12 +21,7 @@ public class PostController {
     UserService userService;
 
     @GetMapping("/all")
-    public Collection<Post> getPosts(@RequestHeader("token") String token, HttpServletResponse response) {
-        if (userService.validate(token) == null) {
-            response.setStatus(401);
-            return null;
-        }
-
+    public Collection<Post> getPosts(HttpServletResponse response) {
         return postService.getPosts();
     }
 
@@ -49,6 +44,9 @@ public class PostController {
                 return "Something went wrong.";
         }
     }
+
+    //@PutMapping("/post/{id}") public String edit
+
 
     @DeleteMapping("/post/delete/{PostName}")
     public String deletePost(@PathVariable("PostName") String PostName, HttpServletResponse response) {

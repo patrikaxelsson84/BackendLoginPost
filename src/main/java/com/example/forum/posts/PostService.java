@@ -35,6 +35,8 @@ public class PostService {
         return 0;
     }
 
+    //public Post editpost(int id, )
+
     public boolean deletePost(String PostName) {
 
         Post post = postRepository.get(PostName);
